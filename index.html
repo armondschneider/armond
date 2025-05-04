@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="output.css" rel="stylesheet" />
+    <style>
+      html {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body class="bg-white px-8 sm:px-6 md:px-10 lg:px-20">
+    <!-- info section -->
+    <div class="prose mx-auto max-w-prose py-8">
+      <img
+        src="public/imgs/aprofilepicture.jpeg"
+        alt="It's me :)"
+        class="w-10 h-10 rounded-full object-cover mb-6"
+      />
+      <h1 class="text-sm text-slate-900 font-medium mb-4">Armond Schneider</h1>
+      <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+        I’m a product design engineer passionate about people and products.
+        Having started from anywhere but linear, I am fascinated by how other
+        people think, feel and behave.
+      </p>
+      <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+        Currently at
+        <a
+          href="https://paradox.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline hover:text-slate-500"
+          >Paradox</a
+        >
+        designing career sites solutions making applying to jobs seamless.
+      </p>
+      <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+        Also building <a 
+        href="https://withverse.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-slate-500"
+        >Verse</a>, a camera app
+        that uses AI to generate poetry based on what it sees.
+      </p>
+    </div>
+
+    <div>
+      <div class="prose mx-auto max-w-prose py-8">
+        <h2 class="text-sm text-slate-900 font-medium mb-2">
+          Web UI Designer at Paradox
+        </h2>
+        <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+          Currently designing and optimizing career site components for Paradox,
+          focusing on increasing user applicant focus rate and providing a
+          seamless user experience.
+        </p>
+        <p class="mt-4 mb-8 text-sm text-slate-600 leading-relaxed">
+          2024 - Present
+        </p>
+        <img
+          class="rounded-xl border border-gray-200"
+          src="public/imgs/paradoxThumbnail.jpg"
+          alt="Paradox"
+        />
+      </div>
+
+      <div class="prose mx-auto max-w-prose py-8">
+        <h2 class="text-sm text-slate-900 font-medium mb-2">
+          Product Designer, Design Engineer at Dump
+        </h2>
+        <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+          Designed, explored, and assisted engineers in building a new social
+          media.
+        </p>
+        <p class="mt-4 mb-8 text-sm text-slate-500 leading-relaxed">
+          2023 - 2024
+        </p>
+        <img
+          class="rounded-xl border border-gray-200"
+          src="public/imgs/dumpThumbnail.jpg"
+          alt="Paradox"
+        />
+      </div>
+
+      <div class="prose mx-auto max-w-prose py-8">
+        <h2 class="text-sm text-slate-900 font-medium mb-2">
+          User Interface Designer at Hause
+        </h2>
+        <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+          Designed the user interface for Hause, providing independent artists a
+          seamless platform to showcase and sell their artwork. Implemented
+          user-friendly features to streamline the selling process and enhance
+          the overall user experience.
+        </p>
+        <p class="mt-4 mb-8 text-sm text-slate-500 leading-relaxed">
+          2022 - 2023
+        </p>
+        <img
+          class="rounded-xl border border-gray-200"
+          src="public/imgs/hauseThumbnail.jpg"
+          alt="Paradox"
+        />
+      </div>
+    </div>
+
+    <footer class="prose mx-auto max-w-prose py-8 flex justify-between items-start">
+      <div class="flex flex-col space-y-1 text-sm text-slate-500">
+        <span id="visitor-location">Last visitor from ...</span>
+        <span>© Armond Schneider 2025</span>
+      </div>
+      <div class="flex space-x-6">
+        <a href="mailto:armondschneider@gmail.com" class="text-sm underline hover:text-slate-500">
+          Email
+        </a>
+        <a href="https://www.linkedin.com/in/armondschneider" target="_blank" rel="noopener noreferrer" class="text-sm underline hover:text-slate-500">
+          LinkedIn
+        </a>
+        <a href="https://x.com/armondme" target="_blank" rel="noopener noreferrer" class="text-sm underline hover:text-slate-500">
+          X
+        </a>
+        <a href="https://www.threads.net/@armondme" target="_blank" rel="noopener noreferrer" class="text-sm underline hover:text-slate-500">
+          Threads
+        </a>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { animate } from "https://cdn.skypack.dev/motion";
+      // example: fade in the main div on load
+      animate("div", { opacity: [0, 1] }, { duration: 1 });
+    </script>
+    <script>
+      fetch('https://ipapi.co/json/')
+        .then(res => res.json())
+        .then(data => {
+          const el = document.getElementById('visitor-location');
+          if (el) {
+            el.textContent = `Last visitor from ${data.city}, ${data.region}, ${data.country_name}`;
+          }
+        })
+        .catch(() => {
+          /* silently fail */
+        });
+    </script>
+  </body>
+</html>
