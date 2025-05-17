@@ -36,9 +36,19 @@
       #scroll-container {
         min-height: 100vh;
       }
+      .project-image {
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover .project-image {
+        transform: scale(1.02);
+      }
     </style>
     <title>Armond Schneider — Product Design Engineer</title>
-    <link rel="icon" href="https://armond.me/public/imgs/favicon.ico" type="favicon" />
+    <link
+      rel="icon"
+      href="https://armond.me/public/imgs/favicon.ico"
+      type="favicon"
+    />
 
     <meta
       name="description"
@@ -54,10 +64,7 @@
       property="og:description"
       content="Crafting intuitive digital experiences through reusable components and seamless UIs."
     />
-    <meta
-      property="og:image"
-      content="https://armond.me/public/imgs/og.jpg"
-    />
+    <meta property="og:image" content="https://armond.me/public/imgs/og.jpg" />
     <meta property="og:url" content="https://armond.me" />
     <meta property="og:type" content="website" />
 
@@ -71,146 +78,173 @@
       name="twitter:description"
       content="Crafting intuitive digital experiences through reusable components and seamless UIs."
     />
-    <meta
-      name="twitter:image"
-      content="https://armond.me/public/imgs/og.jpg"
-    />
+    <meta name="twitter:image" content="https://armond.me/public/imgs/og.jpg" />
   </head>
   <body>
     <div id="scroll-container" class="bg-white px-4 sm:px-6 md:px-10 lg:px-20">
-    <!-- Info Section -->
-    <div class="prose mx-auto max-w-prose py-8">
-      <img
-        src="public/imgs/armondSchneider.jpeg"
-        alt="It's me :)"
-        class="w-10 h-10 rounded-full object-cover mb-6"
-      />
-      <h1 class="text-sm text-slate-900 font-medium mb-4">Armond Schneider</h1>
-      <p class="mt-4 text-sm text-slate-900 leading-relaxed">
-        I’m a product design engineer passionate about people and products.
-        Having started from anywhere but linear, I am fascinated by how other
-        people think, feel and behave.
-      </p>
-      <p class="mt-4 text-sm text-slate-900 leading-relaxed">
-        Currently at
-        <a
-          href="https://paradox.ai"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="underline hover:text-slate-500"
-          >Paradox</a
-        >
-        designing career sites solutions making applying to jobs seamless.
-      </p>
-      <p class="mt-4 text-sm text-slate-900 leading-relaxed">
-        Also building
-        <a
-          href="https://withverse.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="underline hover:text-slate-500"
-          >Verse</a
-        >, a camera app that uses AI to generate poetry based on what it sees.
-      </p>
-    </div>
-
-    <!-- Experience Sections -->
-    <div>
+      <!-- Info Section -->
       <div class="prose mx-auto max-w-prose py-8">
-        <h2 class="text-sm text-slate-900 font-medium mb-2">
-          Web UI Designer at Paradox
-        </h2>
-        <p class="mt-4 text-sm text-slate-900 leading-relaxed">
-          Currently designing and optimizing career site components for Paradox,
-          focusing on increasing user applicant focus rate and providing a
-          seamless user experience.
-        </p>
-        <p class="mt-4 mb-8 text-sm text-slate-600 leading-relaxed">
-          2024 – Present
-        </p>
         <img
-          class="rounded-xl border border-gray-200"
-          src="public/imgs/paradoxThumbnail.jpg"
-          alt="Paradox"
+          src="public/imgs/armondSchneider.jpeg"
+          alt="It's me :)"
+          class="w-10 h-10 rounded-full object-cover mb-6"
         />
+        <h1 class="text-sm text-slate-900 font-medium mb-4">
+          Armond Schneider
+        </h1>
+        <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+          I’m a product design engineer passionate about people and products.
+          Having started from anywhere but linear, I am fascinated by how other
+          people think, feel and behave.
+        </p>
+        <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+          Currently at
+          <a
+            href="https://paradox.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline hover:text-slate-500"
+            >Paradox</a
+          >
+          designing career sites solutions making applying to jobs seamless.
+        </p>
+        <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+          Also building
+          <a
+            href="https://withverse.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline hover:text-slate-500"
+            >Verse</a
+          >, a camera app that uses AI to generate poetry based on what it sees.
+        </p>
       </div>
 
-      <div class="prose mx-auto max-w-prose py-8">
-        <h2 class="text-sm text-slate-900 font-medium mb-2">
-          Product Designer, Design Engineer at Dump
-        </h2>
-        <p class="mt-4 text-sm text-slate-900 leading-relaxed">
-          Designed, explored, and assisted engineers in building a new social
-          media.
-        </p>
-        <p class="mt-4 mb-8 text-sm text-slate-500 leading-relaxed">
-          2023 – 2024
-        </p>
-        <img
-          class="rounded-xl border border-gray-200"
-          src="public/imgs/dumpThumbnail.jpg"
-          alt="Dump"
-        />
+      <!-- Experience Sections -->
+      <div>
+        <div class="prose project-card mx-auto max-w-prose py-8">
+          <a href="paradox.html" class="inline-block w-full no-underline text-inherit">
+            <h2 class="text-sm text-slate-900 font-medium mb-2">
+              Web UI Designer at Paradox
+            </h2>
+            <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+              Currently designing and optimizing career site components for
+              Paradox, focusing on increasing user applicant focus rate and
+              providing a seamless user experience.
+            </p>
+            <p class="mt-4 mb-8 text-sm text-slate-600 leading-relaxed">
+              2024 – Present
+            </p>
+            <img
+              class="project-image rounded-xl border border-gray-200"
+              src="public/imgs/paradoxThumbnail.jpg"
+              alt="Paradox"
+            />
+          </a>
+        </div>
+
+        <div class="prose project-card mx-auto max-w-prose py-8">
+          <a href="dump.html" class="inline-block w-full no-underline text-inherit">
+            <h2 class="text-sm text-slate-900 font-medium mb-2">
+              Product Designer, Design Engineer at Dump
+            </h2>
+            <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+              Designed, explored, and assisted engineers in building a new
+              social media.
+            </p>
+            <p class="mt-4 mb-8 text-sm text-slate-500 leading-relaxed">
+              2023 – 2024
+            </p>
+            <img
+              class="project-image rounded-xl border border-gray-200"
+              src="public/imgs/dumpThumbnail.jpg"
+              alt="Dump"
+            />
+          </a>
+        </div>
+
+        <div class="prose project-card mx-auto max-w-prose py-8">
+          <a href="hause.html" class="inline-block w-full no-underline text-inherit">
+            <h2 class="text-sm text-slate-900 font-medium mb-2">
+              User Interface Designer at Hause
+            </h2>
+            <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+              Designed the user interface for Hause, providing independent
+              artists a seamless platform to showcase and sell their artwork.
+              Implemented user-friendly features to streamline the selling
+              process and enhance the overall user experience.
+            </p>
+            <p class="mt-4 mb-8 text-sm text-slate-500 leading-relaxed">
+              2022 – 2023
+            </p>
+            <img
+              class="project-image rounded-xl border border-gray-200"
+              src="public/imgs/hauseThumbnail.jpg"
+              alt="Hause"
+            />
+          </a>
+        </div>
+        <div class="prose project-card mx-auto max-w-prose py-8">
+          <a href="moreArmond.html" class="inline-block w-full no-underline text-inherit">
+            <h2 class="text-sm text-slate-900 font-medium mb-2">
+              See more of my personal explorations
+            </h2>
+            <p class="mt-4 text-sm text-slate-900 leading-relaxed">
+              I’ve always been driven to build and design experiences that help
+              people and make technology fun. From crafting a journal app to
+              tackling fin tech gaps with intuitive solutions, my personal
+              projects blend creativity and utility to bring a spark to everyday
+              interactions.
+            </p>
+            <p class="mt-4 mb-8 text-sm text-slate-500 leading-relaxed">
+              Forever ❤️
+            </p>
+            <img
+              class="project-image rounded-xl border border-gray-200"
+              src="public/imgs/moreArmondThumbnail.jpg"
+              alt="Hause"
+            />
+          </a>
+        </div>
       </div>
 
-      <div class="prose mx-auto max-w-prose py-8">
-        <h2 class="text-sm text-slate-900 font-medium mb-2">
-          User Interface Designer at Hause
-        </h2>
-        <p class="mt-4 text-sm text-slate-900 leading-relaxed">
-          Designed the user interface for Hause, providing independent artists a
-          seamless platform to showcase and sell their artwork. Implemented
-          user-friendly features to streamline the selling process and enhance
-          the overall user experience.
-        </p>
-        <p class="mt-4 mb-8 text-sm text-slate-500 leading-relaxed">
-          2022 – 2023
-        </p>
-        <img
-          class="rounded-xl border border-gray-200"
-          src="public/imgs/hauseThumbnail.jpg"
-          alt="Hause"
-        />
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer
-      class="prose mx-auto max-w-prose py-8 flex flex-col md:flex-row justify-between items-start space-y-4 md:space-y-0"
-    >
-      <div class="flex space-x-6">
-        <a
-          href="mailto:armondschneider@gmail.com"
-          class="text-xs underline hover:text-slate-500"
-          >Email</a
-        >
-        <a
-          href="https://www.linkedin.com/in/armondschneider"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-xs underline hover:text-slate-500"
-          >LinkedIn</a
-        >
-        <a
-          href="https://x.com/armondme"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-xs underline hover:text-slate-500"
-          >X</a
-        >
-        <a
-          href="https://www.threads.net/@armondme"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-xs underline hover:text-slate-500"
-          >Threads</a
-        >
-      </div>
-      <div class="flex flex-col space-y-1 text-xs text-slate-500">
-        <span id="visitor-location">Last visitor from ...</span>
-        <span>© Armond Schneider 2025</span>
-      </div>
-    </footer>
+      <!-- Footer -->
+      <footer
+        class="prose mx-auto max-w-prose py-8 flex flex-col md:flex-row justify-between items-start space-y-4 md:space-y-0"
+      >
+        <div class="flex space-x-6">
+          <a
+            href="mailto:armondschneider@gmail.com"
+            class="text-xs underline hover:text-slate-500"
+            >Email</a
+          >
+          <a
+            href="https://www.linkedin.com/in/armondschneider"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs underline hover:text-slate-500"
+            >LinkedIn</a
+          >
+          <a
+            href="https://x.com/armondme"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs underline hover:text-slate-500"
+            >X</a
+          >
+          <a
+            href="https://www.threads.net/@armondme"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs underline hover:text-slate-500"
+            >Threads</a
+          >
+        </div>
+        <div class="flex flex-col space-y-1 text-xs text-slate-500">
+          <span id="visitor-location">Last visitor from ...</span>
+          <span>© Armond Schneider 2025</span>
+        </div>
+      </footer>
     </div>
 
     <!-- Scroll-triggered animations -->
@@ -230,7 +264,7 @@
                     opacity: [0, 1],
                     transform: ["translateY(15px)", "translateY(0px)"],
                   },
-                  { duration: 0.9, easing: "ease-out" }
+                  { type: "spring", stiffness: 120, damping: 15 }
                 );
                 io.unobserve(el);
               }

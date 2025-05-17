@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QBD8DZ6W9Y"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QBD8DZ6W9Y");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .project-image {
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover .project-image {
+        transform: scale(1.02);
+      }
+      .prose {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+    </style>
+    <title>Armond's Explorations</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body class="bg-white px-4 sm:px-6 md:px-10 lg:px-20">
+    <!-- Info Section -->
+    <div class="prose project-card mx-auto max-w-4xl py-8">
+      <a
+        href="index.html"
+        class="inline-block text-sm text-gray-700 hover:underline mb-4"
+        >&larr; Back</a
+      >
+      <h1 class="text-sm font-semibold mb-4">Personal explorations</h1>
+      <p class="text-sm leading-relaxed">
+        I grew up dreaming of becoming a Pixar animator, drawn to creating
+        inspiring visuals. 2017, I discovered Photoshop and soon moved into UI
+        design, learning HTML and CSS to bring my best friend
+        <a href="https://www.petrenko.io/" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-500">
+        Nikita 
+        </a>and I ideas online. Today, I’m
+        passionate about making technology both fun and useful, crafting
+        interfaces that delight users and solve real problems.
+      </p>
+    </div>
+
+    <!-- Image Modal -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50"
+    >
+      <div id="modalContent" class="relative">
+        <img
+          id="modalImg"
+          class="max-w-full max-w-3xl max-h-[80vh] rounded-xl shadow-2xl"
+        />
+        <video
+          id="modalVideo"
+          class="max-w-full max-w-3xl max-h-[80vh] rounded-xl shadow-2xl"
+          autoplay
+          muted
+          loop
+          style="display: none"
+        ></video>
+      </div>
+    </div>
+
+    <!-- Screenshots Grid -->
+    <div
+      class="prose mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-4 py-1"
+    >
+      <div class="project-card bg-white rounded-2xl p-1">
+        <img
+          class="project-image cursor-pointer w-full h-64 object-cover rounded-xl border border-gray-200"
+          src="public/imgs/moreArmond/001.jpeg"
+          alt="Exploration 1"
+        />
+      </div>
+      <div class="project-card bg-white rounded-2xl p-1">
+        <img
+          class="project-image cursor-pointer w-full h-64 object-cover rounded-xl border border-gray-200"
+          src="public/imgs/moreArmond/002.jpeg"
+          alt="Exploration 2"
+        />
+      </div>
+      <div class="project-card bg-white rounded-2xl p-1">
+        <img
+          class="project-image cursor-pointer w-full h-64 object-cover rounded-xl border border-gray-200"
+          src="public/imgs/moreArmond/003.jpeg"
+          alt="Exploration 3"
+        />
+      </div>
+      <div class="project-card bg-white rounded-2xl p-1">
+        <img
+          class="project-image cursor-pointer w-full h-64 object-cover rounded-xl border border-gray-200"
+          src="public/imgs/moreArmond/005.jpeg"
+          alt="Exploration 5"
+        />
+      </div>
+      <div class="project-card bg-white rounded-2xl p-1">
+        <img
+          class="project-image cursor-pointer w-full h-64 object-cover rounded-xl border border-gray-200"
+          src="public/imgs/moreArmond/006.jpeg"
+          alt="Exploration 6"
+        />
+      </div>
+      <div class="project-card bg-white rounded-2xl p-1">
+        <img
+          class="project-image cursor-pointer w-full h-64 object-cover rounded-xl border border-gray-200"
+          src="public/imgs/moreArmond/007.jpeg"
+          alt="Exploration 7"
+        />
+      </div>
+      <div class="project-card bg-white rounded-2xl p-1">
+        <img
+          class="project-image cursor-pointer w-full h-64 object-cover rounded-xl border border-gray-200"
+          src="public/imgs/moreArmond/008.jpeg"
+          alt="Exploration 8"
+        />
+      </div>
+      <div class="project-card bg-white rounded-2xl p-1">
+        <img
+          class="project-image cursor-pointer w-full h-64 object-cover rounded-xl border border-gray-200"
+          src="public/imgs/moreArmond/010.jpg"
+          alt="Exploration 10"
+        />
+      </div>
+      <div class="project-card bg-white rounded-2xl p-1">
+        <img
+          class="project-image cursor-pointer w-full h-64 object-cover rounded-xl border border-gray-200"
+          src="public/imgs/moreArmond/011.jpg"
+          alt="Exploration 11"
+        />
+      </div>
+    </div>
+
+    <!-- Videos Section -->
+    <div class="prose mx-auto max-w-4xl py-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div
+          class="project-card bg-white rounded-2xl p-4 flex items-center justify-center"
+        >
+          <video
+            class="project-image cursor-pointer w-full h-80 object-cover rounded-xl border border-gray-200"
+            src="public/imgs/moreArmond/004.mp4"
+            autoplay
+            muted
+            loop
+          ></video>
+        </div>
+        <div
+          class="project-card bg-white rounded-2xl p-4 flex items-center justify-center"
+        >
+          <video
+            class="project-image cursor-pointer w-full h-80 object-cover rounded-xl border border-gray-200"
+            src="public/imgs/moreArmond/009.mp4"
+            autoplay
+            muted
+            loop
+          ></video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll-triggered animation -->
+    <script type="module">
+      import { animate } from "https://cdn.skypack.dev/motion";
+      document.querySelectorAll(".prose").forEach((el) => {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animate(
+                  el,
+                  {
+                    opacity: [0, 1],
+                    transform: ["translateY(15px)", "translateY(0px)"],
+                  },
+                  { type: "spring", stiffness: 120, damping: 15 }
+                );
+                io.unobserve(el);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        io.observe(el);
+      });
+
+      // Media Modal Logic
+      document.querySelectorAll(".project-image").forEach((el) => {
+        el.addEventListener("click", () => {
+          const overlay = document.getElementById("imageModal");
+          const modalImg = document.getElementById("modalImg");
+          const modalVideo = document.getElementById("modalVideo");
+          if (el.tagName === "IMG") {
+            modalVideo.style.display = "none";
+            modalImg.src = el.src;
+            modalImg.style.display = "block";
+          } else if (el.tagName === "VIDEO") {
+            modalImg.style.display = "none";
+            modalVideo.src = el.src;
+            modalVideo.style.display = "block";
+          }
+          overlay.classList.remove("hidden");
+          animate(
+            overlay,
+            { opacity: [0, 1] },
+            { type: "spring", stiffness: 300, damping: 20 }
+          );
+          animate(
+            modalImg,
+            { scale: [0.8, 1] },
+            { type: "spring", stiffness: 300, damping: 20 }
+          );
+          animate(
+            modalVideo,
+            { scale: [0.8, 1] },
+            { type: "spring", stiffness: 300, damping: 20 }
+          );
+        });
+      });
+
+      // Close when clicking outside the image/video
+      const overlay = document.getElementById("imageModal");
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          const modalImg = document.getElementById("modalImg");
+          const modalVideo = document.getElementById("modalVideo");
+          const imgAnim = animate(
+            modalImg,
+            { scale: [1, 0.8] },
+            { type: "spring", stiffness: 300, damping: 20 }
+          );
+          const videoAnim = animate(
+            modalVideo,
+            { scale: [1, 0.8] },
+            { type: "spring", stiffness: 300, damping: 20 }
+          );
+          const overlayAnim = animate(
+            overlay,
+            { opacity: [1, 0] },
+            { type: "spring", stiffness: 300, damping: 20 }
+          );
+          Promise.all([
+            imgAnim.finished,
+            videoAnim.finished,
+            overlayAnim.finished,
+          ]).then(() => {
+            overlay.classList.add("hidden");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

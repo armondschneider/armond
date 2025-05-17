@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QBD8DZ6W9Y"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QBD8DZ6W9Y");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .project-image {
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover .project-image {
+        transform: scale(1.02);
+      }
+      .prose {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+    </style>
+    <title>Web UI Designer at Paradox</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body class="bg-white px-4 sm:px-6 md:px-10 lg:px-20">
+    <!-- Info Section -->
+    <div class="prose project-card mx-auto max-w-4xl py-8">
+      <a
+        href="index.html"
+        class="inline-block text-sm text-gray-700 hover:underline mb-4"
+        >&larr; Back</a
+      >
+      <h1 class="text-sm font-medium mb-4">
+        Web UI Designer at
+        <a href="https://paradox.ai" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-500">
+          Paradox
+        </a>
+      </h1>
+      <p class="text-sm leading-relaxed">
+        At Paradox, while working on designing career sites for clients I also
+        focus on our ui component library, plug and play pieces that let
+        designers spin up career-site sections in a flash while staying
+        consistent and accessible. I also prototype micro‑interactions so every
+        job list or site section feels smooth, intuitive, and just a bit
+        playful. When big ideas hit the table, I dive into proof‑of‑concepts
+        with developers and stakeholders, tackling tricky ui puzzles and testing
+        bold concepts to keep our product fresh and innovative.
+      </p>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden flex items-center justify-center z-50">
+      <div id="modalContent" class="relative">
+        <img id="modalImg" class="hidden max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] rounded-xl shadow-2xl object-contain" />
+        <video
+          id="modalVideo"
+          class="hidden max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] rounded-xl shadow-2xl object-contain"
+          autoplay muted loop
+        ></video>
+      </div>
+    </div>
+
+    <!-- Screenshots Grid -->
+    <div
+      class="prose mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-8 py-8 items-stretch auto-rows-[1fr]"
+    >
+      <div class="project-card h-full flex flex-col">
+        <img
+          src="public/imgs/paradox/paradox1.jpg"
+          alt="Paradox Work 1"
+          class="project-image rounded-xl border border-gray-200"
+        />
+      </div>
+      <div class="project-card h-full flex flex-col">
+        <img
+          src="public/imgs/paradox/paradox2.jpg"
+          alt="Paradox Work 2"
+          class="project-image rounded-xl border border-gray-200"
+        />
+      </div>
+      <div class="project-card h-full flex flex-col">
+        <img
+          src="public/imgs/paradox/paradox3.jpg"
+          alt="Paradox Work 3"
+          class="project-image rounded-xl border border-gray-200"
+        />
+      </div>
+      <div class="project-card h-full flex flex-col">
+        <img
+          src="public/imgs/paradox/paradox4.jpg"
+          alt="Paradox Work 4"
+          class="project-image rounded-xl border border-gray-200"
+        />
+      </div>
+      <div class="project-card h-full flex flex-col">
+        <video
+          src="public/imgs/paradox/paradox5.mp4"
+          class="project-image rounded-xl border border-gray-200 cursor-pointer"
+          muted
+          autoplay
+          loop
+        ></video>
+      </div>
+      <div class="project-card h-full flex flex-col">
+        <video
+          src="public/imgs/paradox/paradox6.mp4"
+          class="project-image rounded-xl border border-gray-200 cursor-pointer"
+          muted
+          autoplay
+          loop
+        ></video>
+      </div>
+    </div>
+
+    <!-- Scroll-triggered animation -->
+    <script type="module">
+      import { animate } from "https://cdn.skypack.dev/motion";
+      document.querySelectorAll(".prose").forEach((el) => {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animate(
+                  el,
+                  {
+                    opacity: [0, 1],
+                    transform: ["translateY(15px)", "translateY(0px)"],
+                  },
+                  { type: "spring", stiffness: 120, damping: 15 }
+                );
+                io.unobserve(el);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        io.observe(el);
+      });
+
+      // Photo & Video Modal Logic
+      document.querySelectorAll('.project-image').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', () => {
+          const overlay = document.getElementById('imageModal');
+          const modalImg = document.getElementById('modalImg');
+          const modalVideo = document.getElementById('modalVideo');
+          if (el.tagName === 'IMG') {
+            modalVideo.classList.add('hidden');
+            modalImg.src = el.src;
+            modalImg.classList.remove('hidden');
+          } else if (el.tagName === 'VIDEO') {
+            modalImg.classList.add('hidden');
+            modalVideo.src = el.src;
+            modalVideo.classList.remove('hidden');
+          }
+          overlay.classList.remove('hidden');
+          animate(overlay, { opacity: [0,1] }, { type: 'spring', stiffness: 300, damping: 20 });
+          const media = el.tagName === 'IMG' ? modalImg : modalVideo;
+          animate(media, { scale: [0.8,1] }, { type: 'spring', stiffness: 300, damping: 20 });
+        });
+      });
+
+      // Close when clicking outside the image or video
+      const overlay = document.getElementById('imageModal');
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          const modalImg = document.getElementById('modalImg');
+          const modalVideo = document.getElementById('modalVideo');
+          // Animate whichever is visible
+          const media = !modalImg.classList.contains('hidden') ? modalImg : modalVideo;
+          const mediaAnim = animate(media, { scale: [1,0.8] }, { type: 'spring', stiffness: 300, damping: 20 });
+          const overlayAnim = animate(overlay, { opacity: [1,0] }, { type: 'spring', stiffness: 300, damping: 20 });
+          Promise.all([mediaAnim.finished, overlayAnim.finished]).then(() => {
+            overlay.classList.add('hidden');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

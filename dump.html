@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QBD8DZ6W9Y"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QBD8DZ6W9Y");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .project-image {
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover .project-image {
+        transform: scale(1.02);
+      }
+      .prose {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+    </style>
+    <title>Web UI Designer at Paradox</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body class="bg-white px-4 sm:px-6 md:px-10 lg:px-20">
+    <!-- Info Section -->
+    <div class="prose project-card mx-auto max-w-4xl py-8">
+      <a
+        href="index.html"
+        class="inline-block text-sm text-gray-700 hover:underline mb-4"
+        >&larr; Back</a
+      >
+      <h1 class="text-sm font-medium mb-4">
+        Product Design, Design Engineer at 
+        <a href="https://withdump.app/" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-500">
+          Dump
+        </a>
+      </h1>
+      <p class="text-sm leading-relaxed">
+        Was brought on to work with our user experience designer to bring the vision to life, worked closely with our engineers that helped craft every user interface component and screen for our iOS application.
+      </p>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden flex items-center justify-center z-50">
+      <div id="modalContent" class="relative">
+        <img id="modalImg" class="max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] rounded-xl shadow-2xl object-contain" />
+      </div>
+    </div>
+
+    <!-- Screenshots Grid -->
+    <div
+      class="prose mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-8 py-8 items-stretch auto-rows-[1fr]"
+    >
+      <div class="project-card h-full flex flex-col">
+        <img
+          src="public/imgs/dump/dump1.jpg"
+          alt="Dump Work 1"
+          class="project-image rounded-xl border border-gray-200"
+        />
+      </div>
+      <div class="project-card h-full flex flex-col">
+        <img
+          src="public/imgs/dump/dump2.jpg"
+          alt="Dump Work 2"
+          class="project-image rounded-xl border border-gray-200"
+        />
+      </div>
+      <div class="project-card h-full flex flex-col">
+        <img
+          src="public/imgs/dump/dump3.jpg"
+          alt="Dump Work 3"
+          class="project-image rounded-xl border border-gray-200"
+        />
+      </div>
+      <div class="project-card h-full flex flex-col">
+        <img
+          src="public/imgs/dump/dump4.jpg"
+          alt="Dump Work 4"
+          class="project-image rounded-xl border border-gray-200"
+        />
+      </div>
+    </div>
+
+    <!-- Scroll-triggered animation -->
+    <script type="module">
+      import { animate } from "https://cdn.skypack.dev/motion";
+      document.querySelectorAll(".prose").forEach((el) => {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animate(
+                  el,
+                  {
+                    opacity: [0, 1],
+                    transform: ["translateY(15px)", "translateY(0px)"],
+                  },
+                  { type: "spring", stiffness: 120, damping: 15 }
+                );
+                io.unobserve(el);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        io.observe(el);
+      });
+
+      // Photo Modal Logic
+      document.querySelectorAll('.project-image').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+          const overlay = document.getElementById('imageModal');
+          const modalImg = document.getElementById('modalImg');
+          modalImg.src = img.src;
+          overlay.classList.remove('hidden');
+          animate(overlay, { opacity: [0,1] }, { type: 'spring', stiffness: 300, damping: 20 });
+          animate(modalImg, { scale: [0.8,1] }, { type: 'spring', stiffness: 300, damping: 20 });
+        });
+      });
+
+      // Close when clicking outside the image
+      const overlay = document.getElementById('imageModal');
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          const modalImg = document.getElementById('modalImg');
+          const imgAnim = animate(modalImg, { scale: [1,0.8] }, { type: 'spring', stiffness: 300, damping: 20 });
+          const overlayAnim = animate(overlay, { opacity: [1,0] }, { type: 'spring', stiffness: 300, damping: 20 });
+          Promise.all([imgAnim.finished, overlayAnim.finished]).then(() => {
+            overlay.classList.add('hidden');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
