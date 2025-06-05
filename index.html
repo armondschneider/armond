@@ -241,7 +241,7 @@
           >
         </div>
         <div class="flex flex-col space-y-1 text-xs text-slate-500">
-          <span id="visitor-location">Last visitor from ...</span>
+          <span id="visitor-location">You’re visiting from ...</span>
           <span>© Armond Schneider 2025</span>
         </div>
       </footer>
@@ -278,15 +278,17 @@
 
     <!-- visitor location -->
     <script>
-      fetch("/api/last-location")
+      fetch("https://ipapi.co/json/")
         .then((res) => res.json())
         .then((data) => {
           const el = document.getElementById("visitor-location");
           if (el) {
-            el.textContent = `Last visitor from ${data.city}, ${data.region}, ${data.country_name}`;
+            el.textContent = `You’re visiting from ${data.city}${data.region ? ", " + data.region : ""}${data.country_name ? ", " + data.country_name : ""}`;
           }
         })
-        .catch(() => {});
+        .catch(() => {
+          // silent failure
+        });
     </script>
   </body>
 </html>
