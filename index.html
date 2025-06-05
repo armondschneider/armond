@@ -278,7 +278,7 @@
 
     <!-- visitor location -->
     <script>
-      fetch("https://ipapi.co/json/")
+      fetch("/api/last-location")
         .then((res) => res.json())
         .then((data) => {
           const el = document.getElementById("visitor-location");
